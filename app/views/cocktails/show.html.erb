@@ -1,0 +1,37 @@
+<div class="container pt-5">
+
+  <!-- Heading -->
+  <h1 class="text-center"> <%= @cocktail.name %> </h1>
+
+  <!-- Ingredient heading -->
+  <div class="row">
+    <% if @cocktail.doses.empty? %>
+    <p class="text-gray">
+      No ingredients yet. Add yours!
+    </p>
+    <% else %>
+    <h3> Ingredients : </h3>
+      <% end %>
+  </div>
+  <!-- Ingredient list -->
+<%= render "cards_ingredients" %>
+  <div class="col">
+    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary", id: "ingredient-add-button"%>
+    <!-- Add cocktail form -->
+    <div class="container pt-5" id="ingredient-form">
+      <div class="row justify-content-center">
+        <div class="col-12 md-8">
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <%= f.association :ingredient,  prompt: "Pick one from list" %>
+            <%= f.input :description %>
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+

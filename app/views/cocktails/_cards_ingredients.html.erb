@@ -1,0 +1,13 @@
+
+  <div class="cards">
+
+    <div class="card_ingredient">
+      <% @cocktail.doses.each do |d| %>
+      <div>
+    <i class="fa fa-glass"></i> <strong> <%= d.ingredient.name %> </strong>
+    <%= link_to "Delete", dose_path(d), class: "btn btn-danger btn-xs", method: :delete  %>
+    <p class="pad10"><%= d.description %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
