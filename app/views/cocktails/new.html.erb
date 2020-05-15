@@ -1,14 +1,14 @@
-
-  <h1 class="text-center">Add new cocktail</h1>
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
+<div class="col mt-3">
+<h2 class="text-center">Add new cocktail</h2>
+  <!-- Add cocktail form -->
+  <div class="container pt-5" id="ingredient-form">
+    <div class="row justify-content-center">
+      <div class="col-12 md-8">
         <%= simple_form_for @cocktail do |f| %>
           <%= f.input :name %>
           <%= f.submit "Submit", class: "btn btn-primary" %>
         <% end %>
-        <div class="pad20">
-          <%= link_to "Go back", cocktails_path, class: "btn btn-warning btn-sm" %>
-        </div>
+      </div>
     </div>
   </div>
 </div>

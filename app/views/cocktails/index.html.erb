@@ -1,15 +1,15 @@
-<div class="container pad20">
+<div class="container pt-5">
   <!-- Heading -->
-  <h1 class="text-underline text-brand">Super cocktails</h1>
+  <h1 class="text-underline text-brand">Your Cocktails Menu:</h1>
 
     <!-- Grid row -->
-  <div class="row">
+  <div class="row mb-5 mt-5">
     <!-- Card -->
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
       <%= link_to cocktail_path(cocktail), class: "card-link" do%>
-      <div class="card">
-        <div class="card-description">
+      <div class="card m-4">
+        <div class="card-body">
           <h2> <%= cocktail.name  %> </h2>
         </div>
       </div>
@@ -19,8 +19,8 @@
   </div>
 
   <!-- Add button -->
-  <div class="pad10">
-    <%= link_to "Add your cocktail", new_cocktail_path, class: "btn btn-primary pad20" %>
+  <div class="row">
+    <%= link_to "Add your cocktail", new_cocktail_path, class: "btn btn-primary btn-lg btn-block" %>
   </div>
 
 <!-- Close main div -->

@@ -11,12 +11,12 @@
     </p>
     <% else %>
     <h3> Ingredients : </h3>
+
       <% end %>
   </div>
   <!-- Ingredient list -->
-<%= render "cards_ingredients" %>
+    <%= render "cards_ingredients" %>
   <div class="col">
-    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary", id: "ingredient-add-button"%>
     <!-- Add cocktail form -->
     <div class="container pt-5" id="ingredient-form">
       <div class="row justify-content-center">
